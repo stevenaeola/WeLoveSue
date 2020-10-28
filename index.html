@@ -65,14 +65,18 @@
         crossorigin="anonymous"></script>
 
         <script>
-        const has = ['red hair', 'awesomeness', 'power'];
-        for(let thing of has){
-          alert('Sue has ' + thing);
-        }
-        const friends = [ 'Stephen Fry', 'will.i.am'];
-        for(let friend of friends){
-          alert('Sue has as friend ' + friend);
-        }
+
+          const Sue = {
+            thing: ['red hair', 'awesomeness', 'power'],
+            friend: [ 'Stephen Fry', 'will.i.am']
+          }
+
+          for(let prop in Sue){
+            for(let v of Sue[prop]){
+              alert(`Sue has a ${prop} ${v}`);
+            }
+          }
+
         </script>
 
 </body>
