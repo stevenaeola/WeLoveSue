@@ -1,0 +1,20 @@
+{
+  "name": "welovesue",
+  "version": "1.0.0",
+  "description": "Sue Black",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevenaeola/WeLoveSue.git"
+  },
+  "author": "s.p.bradley@durham.ac.uk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevenaeola/WeLoveSue/issues"
+  },
+  "homepage": "https://github.com/stevenaeola/WeLoveSue#readme"
+}
