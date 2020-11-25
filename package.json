@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/stevenaeola/WeLoveSue/issues"
   },
-  "homepage": "https://github.com/stevenaeola/WeLoveSue#readme"
+  "homepage": "https://github.com/stevenaeola/WeLoveSue#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
