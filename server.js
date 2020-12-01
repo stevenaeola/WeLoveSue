@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 app.use(express.static('client'));
-app.use(express.urlencoded()); //Parse URL-encoded bodies
+app.use(express.json()); //Parse JSON-encoded bodies
 
 let things = ['Sue has red hair',
 '40 peer reviewed academic publications',
@@ -18,7 +18,8 @@ app.get('/thing/list', function(req, resp){
 
 app.post('/thing/add', function(req, resp){
   console.log(req.body);
-  resp.send('Yeah');
+  const newthing = req.body.newthing;
+  things.push(newthing);
 });
 
 app.get('/friend/list', function(req, resp){

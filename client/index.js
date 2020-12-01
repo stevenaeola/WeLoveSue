@@ -1,4 +1,4 @@
-window.addEventListener('click', async function(event){
+window.addEventListener('load', async function(event){
   let response = await fetch('http://127.0.0.1:8090/thing/list');
   let body = await response.json();
   renderThings(body);  
@@ -12,3 +12,18 @@ function renderThings(things){
     container.appendChild(item);
     }
 }
+
+let submit = document.getElementById('submit_thing');
+submit.addEventListener('click', async function(event){
+  let parameters = {'newthing': 'Sue is cool'};
+  let response = await fetch('http://127.0.0.1:8090/thing/add', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(parameters)
+  });
+
+
+})
