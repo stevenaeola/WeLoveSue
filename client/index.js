@@ -6,6 +6,7 @@ window.addEventListener('load', async function(event){
 
 function renderThings(things){
     let container = document.getElementById('things');
+    container.innerHTML = "";
     for(let thing of things){
       let item = document.createElement('li');
       item.innerHTML= thing;
@@ -15,7 +16,9 @@ function renderThings(things){
 
 let submit = document.getElementById('submit_thing');
 submit.addEventListener('click', async function(event){
-  let parameters = {'newthing': 'Sue is cool'};
+  event.preventDefault();
+  let newthing = document.getElementById('newthing').value;
+  let parameters = {'newthing': newthing};
   let response = await fetch('http://127.0.0.1:8090/thing/add', {
     method: 'POST',
     headers: {
@@ -24,6 +27,6 @@ submit.addEventListener('click', async function(event){
     },
     body: JSON.stringify(parameters)
   });
-
-
+  let body = await response.json();
+  renderThings(body);
 })

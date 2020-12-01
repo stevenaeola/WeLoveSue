@@ -17,9 +17,9 @@ app.get('/thing/list', function(req, resp){
 });
 
 app.post('/thing/add', function(req, resp){
-  console.log(req.body);
   const newthing = req.body.newthing;
   things.push(newthing);
+  resp.json(things);
 });
 
 app.get('/friend/list', function(req, resp){
